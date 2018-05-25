@@ -9,7 +9,7 @@ services:
     ports:
       - '27017:27017'
 
-  test:
+  webapp:
     container_name: flask
     build:
       context: .
