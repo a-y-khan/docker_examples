@@ -6,7 +6,6 @@ db = MongoEngine()
 app = Flask(__name__)
 app.config['MONGODB_SETTINGS'] = {
     'db': 'testapp1',
-    # TODO: set MongoDB host and port information here
     'host': 'mongo',
     'port': 27017
 }
