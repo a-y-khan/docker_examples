@@ -18,4 +18,6 @@ https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce
 ### Mac OS X
 https://docs.docker.com/docker-for-mac/install/
 
+## Installing Docker Compose
 
+[Docker Compose install instructions](https://docs.docker.com/compose/install/#install-compose)
