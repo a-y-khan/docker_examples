@@ -1,13 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, Blueprint, render_template
 from flask_mongoengine import MongoEngine
 
+
+bp = Blueprint('flask_app', __name__)
 
 # TODO: best practice is to put this in a database models.py
 db = MongoEngine()
 
-
 def create_app():
     app = Flask(__name__)
+    app.register_blueprint(bp)
     app.config['MONGODB_SETTINGS'] = {
         'db': 'testapp1',
         'host': 'mongo',
@@ -20,12 +22,12 @@ def create_app():
 app = create_app()
 
 
-@app.route('/')
+@bp.route('/')
 def hello_world():
     return 'Hello, World!'
 
 
-@app.route('/db')
+@bp.route('/db')
 def server_info():
     client = db.connection
     server_info = client.server_info()
