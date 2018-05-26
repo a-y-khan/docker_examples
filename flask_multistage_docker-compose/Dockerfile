@@ -27,4 +27,4 @@ FROM deploy AS test
 RUN pip install -r test_requirements.txt
 
 ENTRYPOINT ["pytest"]
-CMD ["-s", "-ra"]
+CMD ["-s", "-ra", "--cov=."]
