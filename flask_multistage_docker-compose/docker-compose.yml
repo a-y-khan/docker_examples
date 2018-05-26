@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  # MongoDB
+  mongo:
+    hostname: mongo
+    container_name: mongo
+    image: mongo:3.6.3
+    ports:
+      - '27017:27017'
+
+  webapp:
+    container_name: flask
+    build:
+      context: .
+      target: deploy
+    volumes:
+      - ./logs:/usr/app/logs
+    ports:
+      - '5000:5000'
+    links:
+      - mongo
+    depends_on:
+      - mongo
+
+  webapp_test:
+    container_name: test
+    build:
+      context: .
+      target: test
+    volumes:
+      - ./logs:/usr/app/logs
+    links:
+      - mongo
+    depends_on:
+      - mongo
