@@ -1,6 +1,6 @@
 import pytest
 
-from flask_app import create_app
+from example import create_app
 
 
 # from http://www.patricksoftwareblog.com/testing-a-flask-application-using-pytest/
