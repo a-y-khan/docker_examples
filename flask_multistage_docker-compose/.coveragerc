@@ -1,4 +1,3 @@
 [run]
 omit =
   t/*
-  */__init__.py
