@@ -1,2 +1,4 @@
 [run]
-omit = test_app.py
+omit =
+  t/*
+  */__init__.py
