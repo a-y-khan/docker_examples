@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <h1>Mongo Server Information</h1>
+        <h2>Summary</h2>
+            <h3>Mongo Client Connection</h3>
+            <div style="padding: 5px">
+                <p>{{connection}}</p>
+            </div>
+            <h3>MongoDB Server Information</h3>
+            <div style="padding: 5px">
+                <dl>
+                {% for key1, value1 in server_info.items() %}
+                    <dt>{{key1}}</dt>
+                    {% if value1 is mapping %}
+                        <div style="padding: 10px">
+                            <dl>
+                            {% for key2, value2 in value1.items() %}
+                                <dt>{{key2}}</dt>
+                                <dd>{{value2}}</dd>
+                            {% endfor %}
+                            </dl>
+                        </div>
+                    {% else %}
+                    <dd>{{value1}}</dd>
+                    {% endif %}
+                {% endfor %}
+                </dl>
+            </div>
+</body>
+</html>
