@@ -18,11 +18,11 @@ ENTRYPOINT ["gunicorn", "flask_app:app", \
             "--reload"]
 # gunicorn flask_app:app --bind 0.0.0.0:5000 --log-level debug --access-logfile /usr/app/logs/access.log --error-logfile /usr/app/logs/error.log --reload
 
-FROM base AS dependencies
+FROM base AS deploy
 
 RUN pip install -r requirements.txt
 
-FROM dependencies AS test
+FROM deploy AS test
 
 RUN pip install -r test_requirements.txt
 
