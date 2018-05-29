@@ -9,13 +9,13 @@ COPY . .
 
 #RUN pip install -r requirements.txt
 
-EXPOSE 5000
 # run app with gunicorn server
-ENTRYPOINT ["gunicorn", "flask_app:app", \
-            "--bind", "0.0.0.0:5000", "--log-level", "debug", \
-            "--access-logfile", "/usr/app/logs/access.log", \
-            "--error-logfile", "/usr/app/logs/error.log", \
-            "--reload"]
+ENTRYPOINT ["gunicorn"]
+CMD ["flask_app:app", \
+     "--bind", "0.0.0.0:5000", "--log-level", "debug", \
+     "--access-logfile", "/usr/app/logs/access.log", \
+     "--error-logfile", "/usr/app/logs/error.log", \
+     "--reload"]
 # gunicorn flask_app:app --bind 0.0.0.0:5000 --log-level debug --access-logfile /usr/app/logs/access.log --error-logfile /usr/app/logs/error.log --reload
 
 FROM base AS deploy
