@@ -10,4 +10,5 @@ COPY . .
 RUN pip install -r requirements.txt
 
 # run app with gunicorn server
-ENTRYPOINT ["gunicorn", "app:app", "--bind", "0.0.0.0:5000", "--log-level", "debug", "--reload"]
+ENTRYPOINT ["gunicorn"]
+CMD ["app:app", "--bind", "0.0.0.0:5000", "--log-level", "debug", "--reload"]
