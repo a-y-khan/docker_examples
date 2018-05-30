@@ -1,5 +1,6 @@
 # python_docker_examples
-Python+Docker sample code and Dockerfiles for PyLadies meetup
+Python+Docker sample code and Dockerfiles for PyLadies meetup.
+[Link to slides](https://docs.google.com/presentation/d/1rodpkiL5FhIlL5XfQtAtBB49CxisJmEQ5n1VxL-w6Ks/edit?usp=sharing)
 
 ## Docker version
 
