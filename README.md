@@ -1,9 +1,9 @@
 # python_docker_examples
 Python+Docker sample code and Dockerfiles for PyLadies meetup
 
-## Python version
+## Docker version
 
-Code has been tested with Python 3.6.
+Tested with Docker CE 18+.
 
 ## Installing Docker CE
 
