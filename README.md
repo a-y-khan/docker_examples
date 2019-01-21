@@ -13,9 +13,9 @@ Tested with Docker CE 18+.
 
 #### Mac OS X 10.14.2 (Mojave)
 
-* Docker Desktop 2.0.0.0-mac81 (29211)
-* docker engine 18.09.0, build 4d60db4
-* docker-compose 1.23.2, build 1110ad01
+* Docker Desktop 2.0.0.2 (30215)
+* docker engine 18.09.1
+* docker-compose 1.23.2
 
 ## Installing Docker CE
 
