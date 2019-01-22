@@ -7,8 +7,6 @@ WORKDIR /usr/app
 
 COPY . .
 
-#RUN pip install -r requirements.txt
-
 # run app with gunicorn server
 ENTRYPOINT ["gunicorn"]
 CMD ["flask_app:app", \
@@ -20,11 +18,11 @@ CMD ["flask_app:app", \
 
 FROM base AS deploy
 
-RUN pip install -r requirements.txt
+RUN pip install .
 
 FROM deploy AS test
 
-RUN pip install -r test_requirements.txt
+RUN pip install -r t/test_requirements.txt
 
 ENTRYPOINT ["pytest"]
 CMD ["-s", "-ra", "--cov=.", "t"]
