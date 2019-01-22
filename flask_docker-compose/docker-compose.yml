@@ -5,7 +5,7 @@ services:
   mongo:
     hostname: mongo
     container_name: mongo
-    image: mongo:3.6.3
+    image: mongo:4.0.5
     ports:
       - '27017:27017'
 
@@ -14,7 +14,7 @@ services:
     build:
       context: .
     volumes:
-      - ./logs:/usr/app/logs
+      - ./logs:/usr/app/logs:rw
     ports:
       - '5000:5000'
     links:
