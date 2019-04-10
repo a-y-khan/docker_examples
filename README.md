@@ -1,5 +1,5 @@
 # python_docker_examples
-Docker sample code for [Getting Started With Docker (2019)](https://docs.google.com/presentation/d/1aEFJ5XVLn_8sJO3nr_I7PfeyO8l3QlZa4tj8DXJMtP4/edit?usp=sharing).
+Docker sample code for [Getting Started With Docker (2019)](https://www.slideshare.net/AylaKhan1/getting-started-with-docker-140346073).
 
 ## Docker version
 
