@@ -18,11 +18,10 @@ CMD ["flask_app:app", \
 
 FROM base AS deploy
 
-RUN pip install .
+RUN pip install --verbose --no-input .
 
 FROM deploy AS test
 
-RUN pip install -r t/test_requirements.txt
-
-ENTRYPOINT ["pytest"]
-CMD ["-s", "-ra", "--cov=.", "t"]
+RUN pip install --verbose --no-input .[test]
+ENTRYPOINT ["python"]
+CMD ["setup.py", "test", "--addopts", "-s -ra t"]
