@@ -7,7 +7,7 @@ WORKDIR /usr/app
 
 COPY . .
 
-RUN pip install -r requirements.txt
+RUN pip install --verbose --no-input .
 
 # run app with gunicorn server
 ENTRYPOINT ["gunicorn"]
