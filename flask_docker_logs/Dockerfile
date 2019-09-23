@@ -7,7 +7,7 @@ WORKDIR /usr/app
 
 COPY . .
 
-RUN pip install .
+RUN pip install --verbose --no-input .
 
 # set up container to run as executable
 # run app with gunicorn server
