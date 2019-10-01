@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.7'
 
 services:
   # MongoDB
@@ -6,6 +6,8 @@ services:
     hostname: mongo
     container_name: mongo
     image: mongo:4.0.5
+    volumes:
+      - my_db:/data
     ports:
       - '27017:27017'
 
@@ -15,7 +17,7 @@ services:
       context: .
       target: deploy
     volumes:
-      - ./logs:/usr/app/logs:rw
+      - my_vol:/usr/app/logs
     ports:
       - '5000:5000'
     links:
@@ -29,8 +31,12 @@ services:
       context: .
       target: test
     volumes:
-      - ./logs:/usr/app/logs
+      - my_vol:/usr/app/logs
     links:
       - mongo
     depends_on:
       - mongo
+
+volumes:
+  my_vol:
+  my_db:

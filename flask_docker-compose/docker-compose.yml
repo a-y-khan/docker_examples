@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:
   # MongoDB
@@ -7,8 +7,11 @@ services:
     container_name: mongo
     image: mongo:4.0.5
     volumes:
-      - ./db:/data/db
-      - ./configdb:/data/configdb
+      - type: volume
+        source: my_db
+        target: /data
+        volume:
+          nocopy: true
     ports:
       - '27017:27017'
 
@@ -17,10 +20,16 @@ services:
     build:
       context: .
     volumes:
-      - ./logs:/usr/app/logs:rw
+      - type: volume
+        source: my_vol
+        target: /usr/app/logs
     ports:
       - '5000:5000'
     links:
       - mongo
     depends_on:
       - mongo
+
+volumes:
+  my_vol:
+  my_db:
