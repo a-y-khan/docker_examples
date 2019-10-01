@@ -1,6 +1,6 @@
 FROM python:3.6
 
-COPY . /usr/app
+COPY hello_world.py /usr/app/
 
 WORKDIR /usr/app
 
