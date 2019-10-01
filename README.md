@@ -1,23 +1,23 @@
 # python_docker_examples
-Docker sample code for [Getting Started With Docker (2019)](https://www.slideshare.net/AylaKhan1/getting-started-with-docker-140346073).
+Docker sample code for Getting Started With Docker (2019) (slides available soon).
 
 ## Docker version
 
 Tested with Docker CE 18+.
 
 ### Test platforms
-#### Ubuntu 18.04
-
-* docker 18.06.1-ce, build e68fc7a
-* docker-compose 1.22.0, build f46880fe
-
 #### Mac OS X 10.14.6 (Mojave)
 
 * Docker Desktop community 2.1.0.3 (38240)
 * docker engine 19.03.2
 * docker-compose 1.24.1
 
-## Installing Docker CE
+#### Ubuntu 18.04
+
+* docker 18.06.1-ce, build e68fc7a
+* docker-compose 1.22.0, build f46880fe
+
+## Installing Docker community
 
 [Docker supported platforms](https://docs.docker.com/install/#supported-platforms)
 
